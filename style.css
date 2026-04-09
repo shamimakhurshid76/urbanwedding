@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: white;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #e91e63;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?luxury-wedding') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  animation: fadeIn 2s;
+}
+
+.overlay h1 {
+  font-size: 45px;
+}
+
+button {
+  padding: 12px 25px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#services {
+  padding: 60px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+#gallery {
+  padding: 60px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.gallery img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#contact {
+  padding: 60px;
+  text-align: center;
+}
+
+.form input, .form textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 260px;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

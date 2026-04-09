@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Wedding</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">Urban Wedding</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="overlay">
+    <h1>Design Your Dream Wedding</h1>
+    <p>Luxury • Elegance • Perfection</p>
+    <button onclick="scrollToContact()">Book Now</button>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Premium Services</h2>
+  <div class="cards">
+    <div class="card">💐 Decoration</div>
+    <div class="card">🍽 Catering</div>
+    <div class="card">🎵 Entertainment</div>
+    <div class="card">🏛 Venue Planning</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Our Work</h2>
+  <div class="gallery">
+    <img src="https://source.unsplash.com/400x300/?wedding">
+    <img src="https://source.unsplash.com/400x300/?indian-wedding">
+    <img src="https://source.unsplash.com/400x300/?wedding-stage">
+    <img src="https://source.unsplash.com/400x300/?wedding-decoration">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Book Your Wedding</h2>
+  <div class="form">
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Phone Number">
+    <textarea placeholder="Tell us your plan"></textarea>
+    <button onclick="submitForm()">Submit</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Urban Wedding | Designed with ❤️</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
