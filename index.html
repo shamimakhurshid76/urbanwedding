@@ -1,224 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Best Wedding Planner in Jharkhand | UrbanWeds</title>
+<meta name="description" content="UrbanWedding - Professional wedding planning services including decoration, catering, photography and more.">
+<meta name="keywords" content="wedding planner, urban wedding, catering, decoration, wedding services">
 
-<meta name="description" content="Best Wedding Planner in Jharkhand. UrbanWeds offers decoration, catering, photography and complete wedding planning services.">
+<title>UrbanWedding | Wedding Planning Services</title>
 
 <style>
-body{
+body {
   font-family: Arial, sans-serif;
-  margin:0;
-  padding:0;
-  background:#f5f5f5;
-  color:#333;
+  margin: 0;
+  background: #f8f8f8;
 }
 
-header{
-  background:#222;
-  color:white;
-  text-align:center;
-  padding:15px;
+header {
+  background: #ff4d6d;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-h1,h2{
-  text-align:center;
+nav {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
 }
 
-p{
-  max-width:800px;
-  margin:auto;
-  padding:10px;
-  line-height:1.6;
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-img{
-  width:90%;
-  max-width:600px;
-  display:block;
-  margin:20px auto;
-  border-radius:10px;
+section {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.accordion{
-  width:90%;
-  max-width:700px;
-  margin:auto;
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.item{
-  margin:10px 0;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
-  border-radius:8px;
-  overflow:hidden;
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.accordion-btn{
-  width:100%;
-  padding:15px;
-  border:none;
-  background:#fff;
-  font-weight:bold;
-  cursor:pointer;
-  text-align:left;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.panel{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.4s ease;
-  background:white;
-  padding:0 15px;
+input, textarea {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.panel p{
-  padding:10px 0;
+.btn {
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-form{
-  background:white;
-  padding:20px;
-  max-width:400px;
-  margin:20px auto;
-  border-radius:10px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+.gallery img {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 10px;
 }
 
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin:5px 0;
-  border:1px solid #ccc;
-  border-radius:5px;
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
 }
 
-button{
-  width:100%;
-  padding:12px;
-  background:#25D366;
-  color:white;
-  border:none;
-  cursor:pointer;
-  border-radius:5px;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  background:#222;
-  color:white;
-  margin-top:30px;
-}
-
-.wa-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:green;
-  color:white;
-  padding:12px 16px;
-  border-radius:50px;
-  text-decoration:none;
-  z-index:999;
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-  <h2>UrbanWeds</h2>
+  <h1>UrbanWedding</h1>
+  <p>Your Dream Wedding, Perfectly Planned</p>
 </header>
 
-<h1>Best Wedding Planner in Jharkhand</h1>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<p>
-UrbanWeds is a professional wedding planning service in Jharkhand offering decoration, catering, photography, venue management and complete event solutions.
-</p>
+<section id="home">
+  <h2>Welcome to UrbanWedding</h2>
+  <p>We make your wedding unforgettable with decoration, catering, and photography.</p>
+</section>
 
-<!-- FIXED IMAGE (IMPORTANT) -->
-<img src="wedding.jpg" alt="Wedding decoration Jharkhand UrbanWeds">
+<section id="services">
+  <h2>Our Services</h2>
 
-<h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Decoration">
+      <h3>Decoration</h3>
+    </div>
 
-<div class="accordion">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" alt="Catering">
+      <h3>Catering</h3>
+    </div>
 
-  <div class="item">
-    <button class="accordion-btn">💐 Decoration</button>
-    <div class="panel">
-      <p>Beautiful wedding stage, mandap and floral decoration services.</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Photography">
+      <h3>Photography</h3>
     </div>
   </div>
+</section>
 
-  <div class="item">
-    <button class="accordion-btn">🍛 Catering</button>
-    <div class="panel">
-      <p>Veg and non-veg catering with customized menus.</p>
-    </div>
-  </div>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80">
+  <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80">
+</section>
 
-  <div class="item">
-    <button class="accordion-btn">📸 Photography</button>
-    <div class="panel">
-      <p>Professional wedding photography and videography.</p>
-    </div>
-  </div>
+<section id="contact">
+  <h2>Book Your Wedding</h2>
 
-</div>
+  <form onsubmit="sendToWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="text" id="phone" placeholder="Your Phone" required><br>
+    <textarea id="message" placeholder="Your Requirements"></textarea><br>
+    <button class="btn" type="submit">Send to WhatsApp</button>
+  </form>
+</section>
 
-<h2>Book Now</h2>
-
-<form onsubmit="sendWA(); return false;">
-  <input id="name" placeholder="Your Name" required>
-  <input id="phone" placeholder="Phone Number" required>
-  <input id="event" placeholder="Event Date / Type" required>
-  <textarea id="msg" placeholder="Message"></textarea>
-  <button type="submit">Send on WhatsApp</button>
-</form>
+<a class="whatsapp-float" href="https://wa.me/918252132553" target="_blank">💬</a>
 
 <footer>
-  © 2026 UrbanWeds
+  <p>© 2026 UrbanWedding | All Rights Reserved</p>
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a class="wa-float"
-href="https://wa.me/918252132553?text=Hi%20I%20need%20wedding%20planner">
-📲 WhatsApp
-</a>
-
 <script>
-function sendWA(){
-  let name=document.getElementById("name").value;
-  let phone=document.getElementById("phone").value;
-  let event=document.getElementById("event").value;
-  let msg=document.getElementById("msg").value;
+function sendToWhatsApp() {
+  var name = document.getElementById('name').value;
+  var phone = document.getElementById('phone').value;
+  var message = document.getElementById('message').value;
 
-  let url="https://wa.me/918252132553?text="
-  +"Name:"+name+"%0a"
-  +"Phone:"+phone+"%0a"
-  +"Event:"+event+"%0a"
-  +"Message:"+msg;
+  var url = "https://wa.me/918252132553?text="
+    + "Name: " + name + "%0a"
+    + "Phone: " + phone + "%0a"
+    + "Message: " + message;
 
-  window.open(url,"_blank");
+  window.open(url, '_blank');
 }
-
-document.querySelectorAll(".accordion-btn").forEach(btn=>{
-  btn.onclick=function(){
-    let panel=this.nextElementSibling;
-
-    if(panel.style.maxHeight){
-      panel.style.maxHeight=null;
-    }else{
-      document.querySelectorAll(".panel").forEach(p=>p.style.maxHeight=null);
-      panel.style.maxHeight=panel.scrollHeight+"px";
-    }
-  }
-});
 </script>
 
 </body>
