@@ -1,57 +1,223 @@
-<style>
-body{
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #333;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Best Wedding Planner in Jharkhand | UrbanWeds</title>
+
+  <meta name="description" content="Best Wedding Planner in Jharkhand. UrbanWeds offers wedding decoration, catering, photography and full event planning services.">
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#f5f5f5;
+      color:#333;
+    }
+
+    header{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    h1,h2{
+      text-align:center;
+    }
+
+    p{
+      max-width:800px;
+      margin:auto;
+      padding:10px;
+      line-height:1.6;
+    }
+
+    img{
+      width:90%;
+      max-width:600px;
+      display:block;
+      margin:20px auto;
+      border-radius:10px;
+    }
+
+    .accordion{
+      width:90%;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .item{
+      margin:10px 0;
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+      border-radius:8px;
+      overflow:hidden;
+    }
+
+    .accordion-btn{
+      width:100%;
+      padding:15px;
+      border:none;
+      background:#fff;
+      font-weight:bold;
+      cursor:pointer;
+      text-align:left;
+    }
+
+    .panel{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.4s ease;
+      background:white;
+      padding:0 15px;
+    }
+
+    .panel p{
+      padding:10px 0;
+    }
+
+    form{
+      background:white;
+      padding:20px;
+      max-width:400px;
+      margin:20px auto;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    input,textarea{
+      width:100%;
+      padding:10px;
+      margin:5px 0;
+      border:1px solid #ccc;
+      border-radius:5px;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      background:#25D366;
+      color:white;
+      border:none;
+      cursor:pointer;
+      border-radius:5px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#222;
+      color:white;
+      margin-top:30px;
+    }
+
+    .wa-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:green;
+      color:white;
+      padding:12px 16px;
+      border-radius:50px;
+      text-decoration:none;
+      z-index:999;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h2>UrbanWeds</h2>
+</header>
+
+<h1>Best Wedding Planner in Jharkhand</h1>
+
+<p>
+UrbanWeds is a professional wedding planning service in Jharkhand offering decoration, catering, photography and complete event management.
+</p>
+
+<!-- IMAGE FIXED -->
+<img src="wedding.jpg" alt="Wedding decoration Jharkhand UrbanWeds">
+
+<h2>Our Services</h2>
+
+<div class="accordion">
+
+  <div class="item">
+    <button class="accordion-btn">💐 Decoration</button>
+    <div class="panel">
+      <p>Beautiful wedding stage, mandap and floral decoration.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="accordion-btn">🍛 Catering</button>
+    <div class="panel">
+      <p>Veg & non-veg catering with customized menus.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="accordion-btn">📸 Photography</button>
+    <div class="panel">
+      <p>Professional wedding photography & videography.</p>
+    </div>
+  </div>
+
+</div>
+
+<h2>Book Now</h2>
+
+<form onsubmit="sendWA(); return false;">
+  <input id="name" placeholder="Your Name" required>
+  <input id="phone" placeholder="Phone Number" required>
+  <input id="event" placeholder="Event Date / Type" required>
+  <textarea id="msg" placeholder="Message"></textarea>
+  <button type="submit">Send on WhatsApp</button>
+</form>
+
+<footer>
+  © 2026 UrbanWeds
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/918252132553?text=Hi%20I%20need%20wedding%20planner">
+📲 WhatsApp
+</a>
+
+<script>
+function sendWA(){
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let event=document.getElementById("event").value;
+  let msg=document.getElementById("msg").value;
+
+  let url="https://wa.me/918252132553?text="
+  +"Name:"+name+"%0a"
+  +"Phone:"+phone+"%0a"
+  +"Event:"+event+"%0a"
+  +"Message:"+msg;
+
+  window.open(url,"_blank");
 }
 
-h1, h2{
-  text-align: center;
-}
+document.querySelectorAll(".accordion-btn").forEach(btn=>{
+  btn.onclick=function(){
+    let panel=this.nextElementSibling;
+    if(panel.style.maxHeight){
+      panel.style.maxHeight=null;
+    }else{
+      document.querySelectorAll(".panel").forEach(p=>p.style.maxHeight=null);
+      panel.style.maxHeight=panel.scrollHeight+"px";
+    }
+  }
+});
+</script>
 
-p{
-  max-width: 800px;
-  margin: auto;
-  padding: 10px;
-  line-height: 1.6;
-}
-
-form{
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-input, textarea{
-  width: 100%;
-  margin: 5px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button{
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.accordion{
-  margin: 20px auto;
-}
-
-.accordion-btn{
-  background: white;
-  border-radius: 8px;
-}
-
-footer{
-  text-align: center;
-  padding: 20px;
-  background: #222;
-  color: white;
-  margin-top: 30px;
-}
-</style>
+</body>
+</html>
