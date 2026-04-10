@@ -50,7 +50,41 @@
   </div>
 
 </div>
+<h2>Book Your Wedding Planner</h2>
 
+<form onsubmit="sendBookingToWhatsApp(); return false;" style="max-width:400px;margin:auto;">
+
+  <input type="text" id="bname" placeholder="Your Name" required style="width:100%;padding:10px;margin:5px 0;">
+
+  <input type="text" id="bphone" placeholder="Phone Number" required style="width:100%;padding:10px;margin:5px 0;">
+
+  <input type="text" id="bevent" placeholder="Wedding Date / Event Type" required style="width:100%;padding:10px;margin:5px 0;">
+
+  <textarea id="bmsg" placeholder="Your Message" style="width:100%;padding:10px;margin:5px 0;"></textarea>
+
+  <button type="submit" style="width:100%;padding:12px;background:#25D366;color:white;border:none;cursor:pointer;">
+    Send Booking on WhatsApp
+  </button>
+
+</form>
+
+<script>
+function sendBookingToWhatsApp() {
+  let name = document.getElementById("bname").value;
+  let phone = document.getElementById("bphone").value;
+  let event = document.getElementById("bevent").value;
+  let msg = document.getElementById("bmsg").value;
+
+  let url = "https://wa.me/918252132553?text="
+    + "New Booking Request%0a"
+    + "Name: " + name + "%0a"
+    + "Phone: " + phone + "%0a"
+    + "Event: " + event + "%0a"
+    + "Message: " + msg;
+
+  window.open(url, "_blank");
+}
+</script>
 <script>
 const buttons = document.querySelectorAll(".accordion-btn");
 
