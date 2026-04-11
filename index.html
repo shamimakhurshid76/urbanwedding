@@ -9,6 +9,54 @@
 <meta name="google-site-verification" content="YOUR-CODE-HERE" />
 
 <style>
+.services-box {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 0 10px #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  border-radius: 10px;
+}
+
+.desc {
+  display: none;
+  font-size: 14px;
+  color: #555;
+}
+.gallery-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-box img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery-box img:hover {
+  transform: scale(1.1);
+}
 /* Fade in animation */
 .fade-in {
   opacity: 0;
@@ -139,17 +187,46 @@
 
   </div>
 </div>
+<div class="section services">
+  <div>
+    <h2>Our Services</h2>
 
-      <div class="section services">
-        <div>
-          <h2>Services</h2>
-          <p>Decoration • Catering • Photography</p>
-        </div>
+    <div class="services-box">
+
+      <div class="card" onclick="toggleDesc(this)">
+        <img src="decoration.jpg" width="200">
+        <h3>Decoration</h3>
+        <p class="desc">We provide stunning wedding decoration with themes, lighting, and floral designs.</p>
       </div>
 
-      <div class="section gallery">
-        <h2>Gallery</h2>
+      <div class="card" onclick="toggleDesc(this)">
+        <img src="catering.jpg" width="200">
+        <h3>Catering</h3>
+        <p class="desc">Delicious food with multiple cuisines and premium service for your guests.</p>
       </div>
+
+      <div class="card" onclick="toggleDesc(this)">
+        <img src="photography.jpg" width="200">
+        <h3>Photography</h3>
+        <p class="desc">Capture your special moments with professional photographers.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="section gallery">
+  <div>
+    <h2>Wedding Gallery</h2>
+
+    <div class="gallery-box">
+      <img src="wedding1.jpg">
+      <img src="wedding2.jpg">
+      <img src="wedding3.jpg">
+      <img src="wedding4.jpg">
+    </div>
+
+  </div>
+</div>
 
       <div class="section contact">
         <div>
@@ -176,7 +253,13 @@
 </div>
 
 <script>
-window.addEventListener("scroll", () => {
+<script>
+function toggleDesc(card) {
+  let desc = card.querySelector(".desc");
+  desc.style.display = desc.style.display === "block" ? "none" : "block";
+}
+</script>
+  window.addEventListener("scroll", () => {
   const scroll = window.scrollY;
   document.getElementById("scrollContainer").style.transform = `translateX(-${scroll}px)`;
 });
