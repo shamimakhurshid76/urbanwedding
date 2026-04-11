@@ -1,206 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>UrbanWedding | Wedding Planner</title>
-
 <meta name="google-site-verification" content="UG3iyieNADM7hK1uCdGY0KguQsEvY_ThvstQQBNqgrY" />
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanWedding | Modern Ceremonies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --sage: #9CAF88;
+            --text: #2D2D2D;
+            --gold: #E5D3B3;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-nav {
-  background: #87CEEB; /* sky blue */
-  color: #333;
-}
-  padding: 10px;
-  text-align: center;
-}
-nav a {
-  color: #333;
-}
-  margin: 0 10px;
-  text-decoration: none;
-}
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-.home {
-  background: linear-gradient(135deg, #fff, #f7f7f7);
-}
-.btn {
-  background: #4da6ff; /* soft blue */
-}
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  cursor: pointer;
-}
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text); text-decoration: none; }
 
-.services-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
+                        url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-.card {
-  width: 250px;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ccc;
-  cursor: pointer;
-}
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
+        /* Services */
+        .services { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card { background: white; padding: 20px; border-radius: 8px; text-align: center; }
+        .service-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; margin: 20px 0 10px; }
 
-.desc {
-  display: none;
-  font-size: 14px;
-}
+        /* Button & Modal */
+        .btn-book { 
+            background: var(--sage); color: white; padding: 15px 40px; border: none; 
+            border-radius: 50px; cursor: pointer; font-size: 1rem; transition: 0.3s;
+        }
+        .btn-book:hover { background: #8a9d77; transform: translateY(-2px); }
 
-.gallery-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; 
+            width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+        }
+        .modal-content {
+            background: var(--bg); margin: 5% auto; padding: 40px; 
+            width: 90%; max-width: 500px; border-radius: 15px; position: relative;
+        }
 
-.gallery-box img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-}
+        form input, form select {
+            width: 100%; padding: 12px; margin: 10px 0; border: 1px solid var(--gold); border-radius: 5px; box-sizing: border-box;
+        }
 
-.contact {
-.contact {
-  background: #e6f7ff; /* very light sky */
-  color: #333;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  top: 0;
-}
-
-.form-popup {
-  display: none;
-  position: fixed;
-  background: white;
-  padding: 20px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.form-popup input, textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 8px;
-}
-</style>
+        .close { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+    </style>
 </head>
-
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <nav>
+        <a href="#" class="logo">URBANWEDDING</a>
+        <button class="btn-book" onclick="openModal()">Book Now</button>
+    </nav>
 
-<section class="home" id="home">
-  <h1>UrbanWedding</h1>
-  <p>Plan your dream wedding with elegance</p>
-  <button class="btn" onclick="openForm()">Book Now</button>
-</section>
+    <header class="hero">
+        <h1>Modern Love, Elegantly Planned</h1>
+        <p>Bespoke wedding ceremonies for the urban soul.</p>
+        <button class="btn-book" onclick="openModal()">Start Planning</button>
+    </header>
 
-<section id="services">
-  <h2>Our Services</h2>
+    <section class="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=800" alt="Decoration">
+            <h3>Minimalist Decoration</h3>
+            <p>From industrial lofts to rooftop gardens, we create clean, sophisticated environments tailored to your vision.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" alt="Planning">
+            <h3>Ceremony Design</h3>
+            <p>Full-service coordination ensuring every detail—from the altar to the aisle—reflects your unique urban story.</p>
+        </div>
+    </section>
 
-  <div class="services-box">
-
-    <div class="card" onclick="toggle(this)">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-      <h3>Decoration</h3>
-      <p class="desc">Beautiful wedding themes and floral designs.</p>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="font-family: 'Playfair Display'; text-align: center;">Reserve Your Date</h2>
+            <form id="weddingForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="address" placeholder="Wedding Venue / Address" required>
+                <input type="tel" id="contact" placeholder="Phone Number" required>
+                <select id="plan" required>
+                    <option value="" disabled selected>Select Your Plan</option>
+                    <option value="Essential (Ceremony Only)">Essential (Ceremony Only)</option>
+                    <option value="Premium (Full Planning)">Premium (Full Planning)</option>
+                    <option value="Custom Elite">Custom Elite</option>
+                </select>
+                <button type="button" class="btn-book" style="width: 100%;" onclick="sendToWhatsApp()">Send Inquiry via WhatsApp</button>
+            </form>
+        </div>
     </div>
 
-    <div class="card" onclick="toggle(this)">
-      <img src="https://images.unsplash.com/photo-1555244162-803834f70033">
-      <h3>Catering</h3>
-      <p class="desc">Delicious food for your guests.</p>
-    </div>
+    <script>
+        function openModal() { document.getElementById('bookingModal').style.display = "block"; }
+        function closeModal() { document.getElementById('bookingModal').style.display = "none"; }
 
-    <div class="card" onclick="toggle(this)">
-      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
-      <h3>Photography</h3>
-      <p class="desc">Capture your best moments professionally.</p>
-    </div>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            const plan = document.getElementById('plan').value;
 
-  </div>
-</section>
+            if(!name || !address || !contact || !plan) {
+                alert("Please fill in all fields.");
+                return;
+            }
 
-<section id="gallery">
-  <h2>Gallery</h2>
+            const phoneNumber = "1234567890"; // REPLACE WITH YOUR NUMBER
+            const message = `*UrbanWedding Booking Inquiry*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Venue:* ${address}%0A` +
+                            `*Contact:* ${contact}%0A` +
+                            `*Plan:* ${plan}`;
 
-  <div class="gallery-box">
-    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e">
-    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
-    <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde">
-  </div>
-</section>
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
 
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>Book your wedding today</p>
-</section>
-
-<div class="overlay" id="overlay" onclick="closeForm()"></div>
-
-<div class="form-popup" id="form">
-  <h3>Book Now</h3>
-  <input type="text" placeholder="Name">
-  <input type="tel" placeholder="Phone">
-  <input type="date">
-  <textarea placeholder="Address"></textarea>
-  <button class="btn">Submit</button>
-  <button onclick="closeForm()">Close</button>
-</div>
-
-<script>
-function toggle(card) {
-  let d = card.querySelector(".desc");
-  d.style.display = d.style.display === "block" ? "none" : "block";
-}
-
-function openForm() {
-  document.getElementById("form").style.display = "block";
-  document.getElementById("overlay").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("form").style.display = "none";
-  document.getElementById("overlay").style.display = "none";
-}
-</script>
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            let modal = document.getElementById('bookingModal');
+            if (event.target == modal) closeModal();
+        }
+    </script>
 
 </body>
 </html>
