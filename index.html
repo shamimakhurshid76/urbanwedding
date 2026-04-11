@@ -1,97 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="UG3iyieNADM7hK1uCdGY0KguQsEvY_ThvstQQBNqgrY" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>UrbanWedding | Wedding Planner</title>
 
-<!-- IMPORTANT: Replace with your real code -->
-<meta name="google-site-verification" content="YOUR-REAL-CODE-HERE" />
+<!-- ADD YOUR REAL CODE HERE -->
+<meta name="google-site-verification" content="UG3iyieNADM7hK1uCdGY0KguQsEvY_ThvstQQBNqgrY" />
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
 }
 
-/* Horizontal scroll */
-.wrapper { height: 400vh; }
-.sticky { position: sticky; top: 0; overflow: hidden; }
-.container {
-  display: flex;
-  width: 400vw;
-  height: 100vh;
-  transition: 0.3s;
+/* NAVBAR */
+nav {
+  background: #111;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
-.section {
-  width: 100vw;
-  height: 100vh;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+  padding: 50px 20px;
   text-align: center;
 }
 
 /* HOME */
 .home {
   background: linear-gradient(135deg, #fff, #f7f7f7);
-  color: #333;
 }
 
-/* SERVICES */
-.services { background: #fafafa; }
-
-/* GALLERY */
-.gallery { background: #eee; }
-
-/* CONTACT */
-.contact { background: #111; color: white; }
-
-/* Animations */
-.fade { opacity: 0; transform: translateY(30px); }
-.show { opacity: 1; transform: translateY(0); transition: 1s; }
-
-/* Button */
+/* BUTTON */
 .btn {
-  padding: 12px 25px;
   background: #ff4d6d;
   color: white;
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
-/* Services */
+/* SERVICES */
 .services-box {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 
 .card {
+  width: 250px;
   background: white;
   padding: 15px;
-  width: 220px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
   cursor: pointer;
 }
 
-.card img { width: 100%; border-radius: 10px; }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-.desc { display: none; font-size: 14px; }
+.desc {
+  display: none;
+  font-size: 14px;
+}
 
-/* Gallery */
+/* GALLERY */
 .gallery-box {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
 }
 
@@ -99,16 +88,18 @@ body {
   width: 200px;
   height: 150px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-/* Form */
-.form-popup, .overlay {
+/* CONTACT */
+.contact {
+  background: #111;
+  color: white;
+}
+
+/* FORM */
+.overlay {
   display: none;
   position: fixed;
-}
-
-.overlay {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
@@ -116,6 +107,8 @@ body {
 }
 
 .form-popup {
+  display: none;
+  position: fixed;
   background: white;
   padding: 20px;
   top: 50%;
@@ -123,81 +116,86 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.form-popup input, .form-popup textarea {
+.form-popup input, textarea {
   width: 100%;
-  margin: 8px 0;
+  margin: 10px 0;
   padding: 8px;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-<div class="sticky">
-<div class="container" id="scroll">
+<!-- NAV -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <!-- HOME -->
-<div class="section home">
-  <div class="fade">
-    <h1>UrbanWedding</h1>
-    <p>Plan your dream wedding with elegance</p>
-    <button class="btn" onclick="openForm()">Book Now</button>
-  </div>
-</div>
+<section class="home fade" id="home">
+  <h1>UrbanWedding</h1>
+  <p>Plan your dream wedding with elegance</p>
+  <button class="btn" onclick="openForm()">Book Now</button>
+</section>
 
 <!-- SERVICES -->
-<div class="section services">
-  <div>
-    <h2>Our Services</h2>
-    <div class="services-box">
+<section id="services">
+  <h2>Our Services</h2>
 
-      <div class="card" onclick="toggle(this)">
-        <img src="decoration.jpg">
-        <h3>Decoration</h3>
-        <p class="desc">Beautiful themes, floral designs and lighting.</p>
-      </div>
+  <div class="services-box">
 
-      <div class="card" onclick="toggle(this)">
-        <img src="catering.jpg">
-        <h3>Catering</h3>
-        <p class="desc">Delicious cuisines with premium service.</p>
-      </div>
-
-      <div class="card" onclick="toggle(this)">
-        <img src="photography.jpg">
-        <h3>Photography</h3>
-        <p class="desc">Capture your moments professionally.</p>
-      </div>
-
+    <div class="card" onclick="toggle(this)">
+      <img src="decoration.jpg">
+      <h3>Decoration</h3>
+      <p class="desc">Beautiful wedding themes and floral designs.</p>
     </div>
+
+    <div class="card" onclick="toggle(this)">
+      <img src="catering.jpg">
+      <h3>Catering</h3>
+      <p class="desc">Delicious food for your guests.</p>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+      <img src="photography.jpg">
+      <h3>Photography</h3>
+      <p class="desc">Capture your best moments professionally.</p>
+    </div>
+
   </div>
-</div>
+</section>
 
 <!-- GALLERY -->
-<div class="section gallery">
-  <div>
-    <h2>Gallery</h2>
-    <div class="gallery-box">
-      <img src="wedding1.jpg">
-      <img src="wedding2.jpg">
-      <img src="wedding3.jpg">
-      <img src="wedding4.jpg">
-    </div>
+<section id="gallery">
+  <h2>Gallery</h2>
+
+  <div class="gallery-box">
+    <img src="wedding1.jpg">
+    <img src="wedding2.jpg">
+    <img src="wedding3.jpg">
   </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="section contact">
-  <div>
-    <h2>Contact Us</h2>
-    <p>Book your wedding today</p>
-  </div>
-</div>
-
-</div>
-</div>
-</div>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Book your wedding today</p>
+</section>
 
 <!-- FORM -->
 <div class="overlay" id="overlay" onclick="closeForm()"></div>
@@ -213,18 +211,6 @@ body {
 </div>
 
 <script>
-window.addEventListener("scroll", () => {
-  document.getElementById("scroll").style.transform =
-    `translateX(-${window.scrollY}px)`;
-});
-
-/* Animation */
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".fade").forEach(el => {
-    el.classList.add("show");
-  });
-});
-
 /* Toggle description */
 function toggle(card) {
   let d = card.querySelector(".desc");
@@ -241,6 +227,13 @@ function closeForm() {
   document.getElementById("form").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
+
+/* Animation */
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".fade").forEach(el => {
+    el.classList.add("show");
+  });
+});
 </script>
 
 </body>
