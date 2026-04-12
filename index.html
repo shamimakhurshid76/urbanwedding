@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="google-site-verification" content="UG3iyieNADM7hK1uCdGY0KguQsEvY_ThvstQQBNqgrY" />
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanWedding | Professional Modern Ceremonies</title>
     
@@ -29,31 +29,33 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVIGATION (Clean Text Logo) --- */
+        /* --- NAVIGATION --- */
         nav {
-            position: absolute;
+            position: absolute; /* Stays at the top of the page, not the screen */
+            top: 0;
+            left: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 5%;
+            padding: 40px 8%;
             z-index: 1000;
         }
 
         .text-logo {
             font-family: 'Playfair Display', serif;
-            color: white;
-            font-size: 1.8rem;
+            color: var(--white);
+            font-size: 2rem;
             text-decoration: none;
             font-weight: 700;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
             border-bottom: 2px solid var(--gold);
         }
 
-        /* --- TOP WALLPAPER HEADER (Static) --- */
+        /* --- STATIC TOP WALLPAPER --- */
         .top-banner {
-            height: 350px;
+            height: 450px;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1449156001433-400922896f60?auto=format&fit=crop&q=80&w=1800'); 
             background-size: cover;
@@ -63,25 +65,34 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            position: relative;
         }
 
         .top-banner h2 { 
-            color: white; 
+            color: var(--white); 
             font-family: 'Playfair Display'; 
-            letter-spacing: 10px; 
+            letter-spacing: 12px; 
             text-transform: uppercase;
-            font-size: 2rem;
-            margin-top: 20px;
+            font-size: 2.2rem;
+            margin-top: 60px;
         }
 
-        /* --- LANDSCAPE HERO --- */
+        .top-banner p {
+            color: var(--white);
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* --- HERO SECTION --- */
         .hero { height: 85vh; display: flex; align-items: center; background: var(--white); }
         .hero-text { width: 45%; padding: 0 5% 0 10%; }
         .hero-image { width: 55%; height: 100%; background: url('https://images.unsplash.com/photo-1519225495810-75175124505a?auto=format&fit=crop&q=80&w=1500') center/cover; }
         
         h1 { font-family: 'Playfair Display', serif; font-size: 3.8rem; line-height: 1.1; font-weight: 700; color: var(--text-dark); }
 
-        /* --- SERVICES GALLERY (5 IMAGES) --- */
+        /* --- GALLERY (5 SECTIONS) --- */
         .section-title { padding: 100px 10% 50px; font-family: 'Playfair Display'; font-size: 3rem; text-align: center; }
         .services-container { display: flex; flex-direction: column; gap: 100px; padding: 0 10% 120px; }
         .service-row { display: flex; gap: 60px; align-items: center; }
@@ -94,29 +105,29 @@
         /* --- FAQ --- */
         .faq-section { background: #F4F1EC; padding: 120px 10%; }
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 60px; }
-        .faq-item { background: white; padding: 45px; border-top: 4px solid var(--sage); }
+        .faq-item { background: var(--white); padding: 45px; border-top: 4px solid var(--sage); }
         .faq-item h4 { font-family: 'Playfair Display'; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700; }
 
-        /* --- FOOTER --- */
-        footer { background: var(--text-dark); color: white; padding: 80px 10%; text-align: center; }
-        .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 25px; letter-spacing: 2px; }
-
         /* --- BUTTONS & MODAL --- */
-        .btn { background: var(--sage); color: white; padding: 22px 50px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; }
-        .btn:hover { background: var(--gold); transform: translateY(-3px); }
+        .btn { background: var(--sage); color: var(--white); padding: 22px 50px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; }
+        .btn:hover { background: var(--gold); }
 
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }
-        .modal-content { background: var(--bg); margin: 3% auto; width: 90%; max-width: 1000px; display: flex; border-radius: 0; overflow: hidden; position: relative; }
+        .modal-content { background: var(--bg); margin: 3% auto; width: 90%; max-width: 1000px; display: flex; overflow: hidden; position: relative; }
         .modal-left { width: 40%; background: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800') center/cover; }
         .modal-right { width: 60%; padding: 70px; }
         input, select { width: 100%; padding: 18px; margin-bottom: 25px; border: 1px solid #ccc; background: transparent; color: var(--text-dark); font-family: inherit; font-weight: 600; }
         .close { position: absolute; right: 30px; top: 20px; font-size: 35px; cursor: pointer; color: #777; }
 
+        /* --- FOOTER --- */
+        footer { background: var(--text-dark); color: var(--white); padding: 80px 10%; text-align: center; }
+        .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 25px; letter-spacing: 2px; }
+
         @media (max-width: 1024px) {
             .hero, .service-row, .modal-content { flex-direction: column !important; }
             .hero-text, .hero-image, .service-img, .service-info, .modal-left, .modal-right { width: 100%; }
             .service-img { height: 350px; margin-bottom: 40px; box-shadow: 15px 15px 0px var(--sage); }
-            .faq-grid { grid-template-columns: 1fr; }
+            nav { flex-direction: column; gap: 20px; padding: 20px; }
         }
     </style>
 </head>
@@ -129,12 +140,12 @@
 
     <div class="top-banner">
         <h2>UrbanWedding</h2>
-        <p style="color: white; font-weight: 300; letter-spacing: 5px; margin-top: 10px;">LUXURY CEREMONY PLANNING</p>
+        <p>LUXURY CEREMONY PLANNING</p>
     </div>
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Elegance <br>In The City.</h1>
+            <h1>Sophistication <br>In The City.</h1>
             <p style="margin-bottom: 40px; font-weight: 500; font-size: 1.2rem;">Expertly curated wedding ceremonies for the modern soul, set against the world's most iconic skylines.</p>
             <button class="btn" onclick="openModal()">Secure Your Date</button>
         </div>
@@ -145,7 +156,7 @@
     <div class="services-container">
         
         <div class="service-row">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Decoration">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Decor">
             <div class="service-info">
                 <h3>Floral & Concept Decor</h3>
                 <p>We transform industrial spaces into ethereal dreamscapes. Our decorators specialize in structural floral art and bespoke lighting that breathes romance into urban architecture.</p>
@@ -161,7 +172,7 @@
         </div>
 
         <div class="service-row">
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Coordination">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Logistics">
             <div class="service-info">
                 <h3>Full-Scale Coordination</h3>
                 <p>From logistics to timelines, we manage the pulse of your wedding day. You focus on the vows; we handle the loaders, the permits, and the precision.</p>
@@ -169,9 +180,9 @@
         </div>
 
         <div class="service-row">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Venue">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Venues">
             <div class="service-info">
-                <h3>Venue Sourcing</h3>
+                <h3>Exclusive Venue Sourcing</h3>
                 <p>Access the city’s best-kept secrets. We secure exclusive lofts, rooftops, and historic galleries that offer the perfect landscape for a modern union.</p>
             </div>
         </div>
@@ -237,7 +248,7 @@
             const phone = document.getElementById('contact').value;
             const plan = document.getElementById('plan').value;
 
-            const myNum = "1234567890"; // CHANGE TO YOUR REAL NUMBER
+            const myNum = "1234567890"; // REPLACE WITH YOUR NUMBER
             const msg = `*URBANWEDDING INQUIRY*%0A*Name:* ${name}%0A*Venue:* ${addr}%0A*Plan:* ${plan}%0A*Contact:* ${phone}`;
             window.open(`https://wa.me/${myNum}?text=${msg}`, '_blank');
         }
