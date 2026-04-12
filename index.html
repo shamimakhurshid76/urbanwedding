@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<img src="logo.png" alt="UrbanWedding Logo" style="height:50px;">
- <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
  <meta name="google-site-verification" content="UG3iyieNADM7hK1uCdGY0KguQsEvY_ThvstQQBNqgrY" />
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanWedding | Modern Ceremonies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <meta name="description" content="UrbanWedding offers premium wedding planning services including decoration, catering, photography and complete wedding management services."> 
  <style>
+  #nav-logo {
+    height: 50px; /* Adjust this height to fit your bar */
+    width: auto;  /* Maintains aspect ratio */
+    display: block;
+}
+
+/* Ensure the nav adjusts for the image height */
+nav {
+    padding: 15px 5%; 
+} 
         :root {
             --bg: #FDFBF7;
             --sage: #9CAF88;
@@ -28,7 +35,13 @@
         }
 
         /* Navigation */
-        nav {
+        <nav>
+    <a href="#" class="logo">
+        <img src="images/urban-wedding-logo.png" alt="UrbanWedding Logo" id="nav-logo">
+    </a>
+    <button class="btn" onclick="openModal()">Book Now</button>
+</nav>
+            nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
