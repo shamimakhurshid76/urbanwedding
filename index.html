@@ -14,7 +14,7 @@
         :root {
             --bg: #FDFBF7;
             --sage: #9CAF88;
-            --text-dark: #1A1A1A; /* Darkened font for better readability */
+            --text-dark: #1A1A1A; 
             --gold: #C5A059;
             --white: #FFFFFF;
         }
@@ -26,88 +26,91 @@
             background-color: var(--bg);
             color: var(--text-dark);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* --- NAVIGATION & LOGO --- */
+        /* --- NAVIGATION --- */
         nav {
-            position: fixed;
+            position: absolute;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 5%;
+            padding: 20px 5%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #eee;
+            background: transparent;
         }
 
-        .logo-img { height: 60px; width: auto; }
+        .logo-img { height: 60px; width: auto; filter: brightness(0) invert(1); }
 
         /* --- TOP WALLPAPER HEADER --- */
         .top-banner {
-            height: 120px;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1500'); /* Urban Architecture Wallpaper */
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1449156001433-400922896f60?auto=format&fit=crop&q=80&w=1800'); 
             background-size: cover;
             background-position: center;
-            margin-top: 80px; /* Space for fixed nav */
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         .top-banner h2 { 
             color: white; 
             font-family: 'Playfair Display'; 
-            letter-spacing: 5px; 
+            letter-spacing: 8px; 
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            margin-top: 40px;
         }
 
         /* --- LANDSCAPE HERO --- */
-        .hero { height: 80vh; display: flex; align-items: center; overflow: hidden; }
+        .hero { height: 80vh; display: flex; align-items: center; background: var(--white); }
         .hero-text { width: 45%; padding: 0 5% 0 10%; }
-        .hero-image { width: 55%; height: 100%; background: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1500') center/cover; }
+        .hero-image { width: 55%; height: 100%; background: url('https://images.unsplash.com/photo-1519225495810-75175124505a?auto=format&fit=crop&q=80&w=1500') center/cover; }
         
         h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1.1; font-weight: 700; color: var(--text-dark); }
 
-        /* --- SERVICES SECTION (Landscape Flow) --- */
-        .section-title { padding: 60px 10% 20px; font-family: 'Playfair Display'; font-size: 2.5rem; font-weight: 700; }
+        /* --- SERVICES SECTION (GALLERY) --- */
+        .section-title { padding: 80px 10% 40px; font-family: 'Playfair Display'; font-size: 2.8rem; text-align: center; }
         
-        .services-container { display: flex; flex-direction: column; gap: 40px; padding: 0 10% 80px; }
+        .services-container { display: flex; flex-direction: column; gap: 80px; padding: 0 10% 100px; }
         
-        .service-row { display: flex; gap: 40px; align-items: center; background: white; padding: 20px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .service-row { display: flex; gap: 50px; align-items: center; }
         .service-row:nth-child(even) { flex-direction: row-reverse; }
         
-        .service-img { width: 40%; height: 350px; object-fit: cover; border-radius: 4px; }
-        .service-info { width: 60%; padding: 20px; }
-        .service-info h3 { font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px; }
-        .service-info p { font-weight: 500; color: #333; }
+        .service-img { width: 50%; height: 450px; object-fit: cover; border-radius: 2px; box-shadow: 20px 20px 0px var(--sage); }
+        .service-info { width: 50%; padding: 20px; }
+        .service-info h3 { font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 20px; }
+        .service-info p { font-size: 1.1rem; color: #1A1A1A; font-weight: 400; }
 
         /* --- FAQ SECTION --- */
-        .faq-section { background: #F4F1EC; padding: 80px 10%; }
-        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .faq-item { background: white; padding: 25px; }
-        .faq-item h4 { font-family: 'Playfair Display'; color: var(--sage); margin-bottom: 10px; font-weight: 700; }
-
-        /* --- BUTTONS & MODAL --- */
-        .btn { background: var(--sage); color: white; padding: 18px 40px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .btn:hover { background: var(--text-dark); }
-
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
-        .modal-content { background: var(--bg); margin: 5% auto; width: 85%; max-width: 900px; display: flex; border-radius: 8px; overflow: hidden; position: relative; }
-        .modal-left { width: 40%; background: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800') center/cover; }
-        .modal-right { width: 60%; padding: 50px; }
-        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit; font-weight: 500; }
+        .faq-section { background: #F4F1EC; padding: 100px 10%; }
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .faq-item { background: white; padding: 40px; border-top: 3px solid var(--sage); }
+        .faq-item h4 { font-family: 'Playfair Display'; font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; }
 
         /* --- FOOTER --- */
-        footer { background: var(--text-dark); color: white; padding: 40px 10%; text-align: center; }
-        .footer-logo { font-family: 'Playfair Display'; font-size: 1.5rem; margin-bottom: 10px; display: block; }
-        .copyright { font-size: 0.8rem; opacity: 0.7; letter-spacing: 1px; }
+        footer { background: var(--text-dark); color: white; padding: 60px 10%; text-align: center; }
+        .copyright { font-size: 0.8rem; opacity: 0.6; margin-top: 20px; letter-spacing: 2px; }
+
+        /* --- UI ELEMENTS --- */
+        .btn { background: var(--sage); color: white; padding: 20px 45px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; }
+        .btn:hover { background: var(--gold); }
+
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+        .modal-content { background: var(--bg); margin: 5% auto; width: 85%; max-width: 900px; display: flex; border-radius: 0; overflow: hidden; position: relative; }
+        .modal-left { width: 40%; background: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800') center/cover; }
+        .modal-right { width: 60%; padding: 60px; }
+        input, select { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; background: transparent; color: var(--text-dark); font-family: inherit; font-weight: 500; }
+        .close { position: absolute; right: 25px; top: 20px; font-size: 30px; cursor: pointer; color: #999; }
 
         @media (max-width: 900px) {
             .hero, .service-row, .modal-content { flex-direction: column !important; }
             .hero-text, .hero-image, .service-img, .service-info, .modal-left, .modal-right { width: 100%; }
+            .service-img { height: 300px; margin-bottom: 30px; box-shadow: 10px 10px 0px var(--sage); }
             .faq-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -115,64 +118,87 @@
 <body>
 
     <nav>
-        <a href="#">
-            <img src="logo.png" alt="UrbanWedding" class="logo-img">
-        </a>
-        <button class="btn" onclick="openModal()">Book Now</button>
+        <a href="#"><img src="logo.png" alt="UrbanWedding" class="logo-img"></a>
+        <button class="btn" onclick="openModal()" style="border: 1px solid white;">Book Now</button>
     </nav>
 
     <div class="top-banner">
-        <h2>Modern Urban Wedding Planning</h2>
+        <h2>UrbanWedding</h2>
+        <p style="color: white; font-weight: 200; letter-spacing: 3px;">EXPERTS IN MODERN CEREMONIES</p>
     </div>
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Crafting Iconic <br>City Celebrations.</h1>
-            <p style="margin-bottom: 30px; font-weight: 500;">Bespoke planning for the modern couple, focused on luxury lofts and architectural aesthetics.</p>
-            <button class="btn" onclick="openModal()">Get Started</button>
+            <h1>Sophisticated <br>City Unions.</h1>
+            <p style="margin-bottom: 40px; font-weight: 500; font-size: 1.1rem;">Bespoke wedding planning for those who find beauty in the skyline and the urban heartbeat.</p>
+            <button class="btn" onclick="openModal()">Secure Your Date</button>
         </div>
         <div class="hero-image"></div>
     </section>
 
-    <h2 class="section-title">Exclusive Services</h2>
+    <h2 class="section-title">Our Wedding Gallery</h2>
     <div class="services-container">
         
         <div class="service-row">
-            <img src="https://images.unsplash.com/photo-1519225495810-75175124505a?auto=format&fit=crop&q=80&w=800" class="service-img" alt="Decoration">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Floral Decoration">
             <div class="service-info">
-                <h3>Bespoke Decoration</h3>
-                <p>We redefine wedding aesthetics using structural floral designs, minimalist lighting, and industrial-chic textures that complement any urban space perfectly.</p>
+                <h3>Floral & Concept Decor</h3>
+                <p>We transform cold industrial lofts into warm, ethereal landscapes. Our decoration team specializes in architectural floral installations and custom lighting that redefines the modern urban aesthetic.</p>
             </div>
         </div>
 
         <div class="service-row">
-            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=800" class="service-img" alt="Catering">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Gourmet Catering">
             <div class="service-info">
-                <h3>Gourmet Catering</h3>
-                <p>Curated menus that blend local urban flavors with world-class culinary techniques. From rooftop cocktails to grand multi-course ballroom dinners.</p>
+                <h3>Gourmet Urban Catering</h3>
+                <p>A fusion of fine dining and contemporary tastes. From rooftop small-plates to five-course gala dinners, we partner with the city's most innovative chefs to create a menu as unique as your love story.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Wedding Photography">
+            <div class="service-info">
+                <h3>Cinematic Storytelling</h3>
+                <p>Capturing the candid, raw emotions against the backdrop of the city. Our photography partners specialize in high-fashion, documentary-style visuals that preserve every glance and skyline glow.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Venue Sourcing">
+            <div class="service-info">
+                <h3>Hidden Gem Venues</h3>
+                <p>We grant you access to the city's best-kept secrets. Whether it's a private rooftop overlooking the harbor or a historic underground gallery, we find the space that matches your urban soul.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1000" class="service-img" alt="Entertainment">
+            <div class="service-info">
+                <h3>Rhythm & Soul</h3>
+                <p>From indie jazz ensembles to world-class DJs, we curate the soundscape of your evening. We ensure the music transitions perfectly from a sophisticated cocktail hour to a high-energy dance floor.</p>
             </div>
         </div>
 
     </div>
 
     <section class="faq-section">
-        <h2 style="font-family: 'Playfair Display'; text-align: center; font-size: 2.2rem; margin-bottom: 30px;">Essentials FAQ</h2>
+        <h2 style="font-family: 'Playfair Display'; text-align: center; font-size: 2.5rem;">Planning FAQ</h2>
         <div class="faq-grid">
             <div class="faq-item">
-                <h4>When should we start?</h4>
-                <p>Our agile planning process typically takes **4-5 months**. We specialize in quick-turnaround, high-impact ceremonies.</p>
+                <h4>What is the planning timeline?</h4>
+                <p>Our agile urban process is designed for **4-5 months**. This allows us to focus on quality and precision without the unnecessary drag of longer planning cycles.</p>
             </div>
             <div class="faq-item">
-                <h4>Do you provide the venue?</h4>
-                <p>We offer a curated list of exclusive lofts, rooftops, and galleries that are often not available to the general public.</p>
+                <h4>Can we customize our vendor list?</h4>
+                <p>Absolutely. While we have a preferred urban network, we are happy to vet and manage any vendors you wish to bring into your ceremony.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <span class="footer-logo">URBANWEDDING</span>
-        <p style="margin-bottom: 20px; font-weight: 300;">Luxury Wedding Planning for the Modern World.</p>
-        <p class="copyright">© 2026 URBANWEDDING PLANNING. ALL RIGHTS RESERVED.</p>
+        <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">URBANWEDDING</h3>
+        <p style="font-weight: 300; opacity: 0.8;">Bespoke Wedding Planning & Ceremony Management.</p>
+        <p class="copyright">© 2026 URBANWEDDING. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <div id="bookingModal" class="modal">
@@ -180,15 +206,15 @@
             <div class="modal-left"></div>
             <div class="modal-right">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <h2 style="font-family: 'Playfair Display'; margin-bottom: 15px;">Inquire Today</h2>
+                <h2 style="font-family: 'Playfair Display'; margin-bottom: 25px;">Let's Connect</h2>
                 <form id="waForm">
                     <input type="text" id="name" placeholder="Full Name" required>
-                    <input type="text" id="address" placeholder="Venue Address/City" required>
-                    <input type="tel" id="contact" placeholder="Your WhatsApp Number" required>
+                    <input type="text" id="address" placeholder="Wedding Venue / City" required>
+                    <input type="tel" id="contact" placeholder="WhatsApp Number" required>
                     <select id="plan">
-                        <option>Essential Ceremony Package</option>
-                        <option>Full Urban Experience</option>
-                        <option>Custom Elite Plan</option>
+                        <option>Full Ceremony Planning</option>
+                        <option>Decoration & Concept Only</option>
+                        <option>Elite Management Package</option>
                     </select>
                     <button type="button" class="btn" style="width: 100%;" onclick="sendWA()">Message on WhatsApp</button>
                 </form>
@@ -206,8 +232,8 @@
             const phone = document.getElementById('contact').value;
             const plan = document.getElementById('plan').value;
 
-            const myNum = "1234567890"; // ENTER YOUR NUMBER HERE
-            const msg = `*URBANWEDDING INQUIRY*%0A*Name:* ${name}%0A*Venue:* ${addr}%0A*Plan:* ${plan}%0A*Contact:* ${phone}`;
+            const myNum = "1234567890"; // CHANGE THIS TO YOUR ACTUAL NUMBER
+            const msg = `*NEW INQUIRY*%0A*Name:* ${name}%0A*Venue:* ${addr}%0A*Plan:* ${plan}%0A*Contact:* ${phone}`;
             window.open(`https://wa.me/${myNum}?text=${msg}`, '_blank');
         }
 
