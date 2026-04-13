@@ -93,6 +93,26 @@ nav {
             background: var(--bg); margin: 5% auto; padding: 40px; 
             width: 90%; max-width: 500px; border-radius: 15px; position: relative;
         }
+.wedding-footer {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Or match your theme color */
+    border-top: 1px solid #eee;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Urban/Modern font */
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.7;
+}
 
         form input, form select {
             width: 100%; padding: 12px; margin: 10px 0; border: 1px solid var(--gold); border-radius: 5px; box-sizing: border-box;
@@ -202,6 +222,14 @@ nav {
             if (event.target == modal) closeModal();
         }
     </script>
-
+<footer class="wedding-footer">
+    <div class="footer-content">
+        <p>&copy; <span id="current-year"></span> [Mahzabeen Naaz] — All Rights Reserved.</p>
+        <p class="tagline">Made with love for our urban celebration.</p>
+    </div>
+</footer>
+<script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
